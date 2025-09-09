@@ -35,17 +35,27 @@
             margin-bottom: 10px;
         }
 
-        .current-position {
+        .sub_header {
             font-size: 1.2em;
             color: #1a5490;
             margin-bottom: 10px;
         }
 
         .mission {
-            font-style: italic;
             color: #666;
             margin-bottom: 30px;
             font-size: 1.1em;
+        }
+
+        .focus-areas {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .focus-areas strong {
+            color: #333;
         }
 
         .education-item {
@@ -118,6 +128,28 @@
             margin-left: 20px;
         }
 
+        .project-with-image {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .project-content {
+            flex: 2;
+        }
+
+        .project-image {
+            flex: 1;
+            max-width: 250px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 15px;
@@ -131,92 +163,134 @@
                 display: block;
                 margin-bottom: 10px;
             }
+
+            .project-with-image {
+                flex-direction: column;
+            }
+            .project-image {
+                max-width: 100%;
+                order: -1; /* Image goes to top on mobile */
+            }
         }
     </style>
 </head>
 <body>
     <h1>Cornelius Gruss</h1>
-    <div class="current-position">MS Robotics & Autonomous Systems Student @ Boston University</div>
-    <div class="mission">Building intelligent robotic systems that solve real-world automation challenges</div>
+    <div class="sub_header">MS Robotics Student specializing in autonomous systems</div>
+    <div class="mission">Combining hands-on robotics development with AI to advance autonomous navigation and manufacturing automation. Currently pursuing MS in Robotics & Autonomous Systems at Boston University, building on mechanical engineering foundation from Technical University of Munich.</div>
 
-    <h2>About</h2>
-    <p>I'm a German mechanical engineer currently pursuing my Master's in Robotics at BU, with a focus on applying reinforcement learning to manufacturing and autonomous systems. My background combines hands-on engineering experience with cutting-edge AI research.</p>
-
-
+    <div class="focus-areas"><strong>Focus Areas:</strong> Reinforcement Learning • Autonomous Systems • Manufacturing Automation • Control Systems</div>
 
     <h2>Featured Projects</h2>
+
+    <div class="project">
+        <div class="project-title">Aeolos Autonomous Delivery Drone System</div>
+        <div class="project-period">Feb 2019 – June 2021 | Independent Development</div>
+
+        <div class="project-with-image">
+            <div class="project-content">
+                <strong>Overview:</strong> Engineered a fully autonomous delivery drone with custom winch-based payload deployment system, from concept to working prototype.
+                
+                <p><strong>Technical Challenges:</strong></p>
+                <ul>
+                    <li>Developing stable flight control algorithms for varying payload weights</li>
+                    <li>Designing precise winch mechanism for safe payload deployment</li>
+                    <li>Integrating GPS navigation with obstacle avoidance systems</li>
+                </ul>
+                
+                <p><strong>Achievements:</strong></p>
+                <ul>
+                    <li>Built working prototype using self-designed CNC machined components</li>
+                    <li>Successful autonomous flights with precise delivery capabilities</li>
+                    <li>Won 2nd place in Entrepreneurs of Tomorrow Business Plan Competition (2021)</li>
+                </ul>
+            </div>
+            
+            <div class="project-image">
+                <img src="aeolos_flying.png" alt="Aeolos drone during autonomous delivery test flight">
+            </div>
+        </div>
+    </div>
 
     <div class="project">
         <div class="project-title">Reinforcement Learning for Manufacturing Optimization</div>
         <div class="project-period">Nov 2024 – June 2025 | Bachelor's Thesis Research</div>
         
-        <strong>Overview:</strong> Developing a novel RL framework that integrates AI agents with industrial CAM software for autonomous manufacturing parameter optimization as part of the CICAM research project.
+        <strong>Overview:</strong> Developed and evaluated a reinforcement learning framework for automated CAM parameter identification in milling operations, integrated with professional hyperMILL software. Compared state-of-the-art algorithms (PPO vs SAC) across six predefined machining operations.
         
         <p><strong>Technical Challenges:</strong></p>
         <ul>
-            <li>Integrating RL algorithms with existing CAM software systems</li>
-            <li>Creating reward functions for complex manufacturing processes</li>
-            <li>Ensuring real-time performance in industrial environments</li>
+            <li>Integrating RL algorithms with existing CAM software systems and APIs</li>
+            <li>Designing comprehensive reward functions balancing machining time and accumulated work</li>
+            <li>Creating robust state and action space representations for complex manufacturing processes</li>
+            <li>Ensuring reliable real-time performance in industrial parameter optimization scenarios</li>
         </ul>
         
         <p><strong>Achievements:</strong></p>
         <ul>
-            <li>Achieved significant improvement in machining efficiency through intelligent parameter selection</li>
-            <li>Collaboration with industry partners for real-world validation</li>
-            <li>Research findings being prepared for publication in top-tier AI/manufacturing journal</li>
+            <li>SAC algorithm achieved 24% faster convergence and superior decision stability (σ=0.77 vs PPO's σ=7.46)</li>
+            <li>100% job completion rate with SAC vs 95.20% with PPO across all test operations</li>
+            <li>Successfully automated parameter identification that traditionally relies on expert knowledge</li>
+            <li>Collaboration with industry partners through CICAM research project for real-world validation</li>
         </ul>
+        
+        <img src="rl_cam_programming_hyperMill.png" alt="CAM software interface showing RL-optimized tool paths and parameter identification" style="width: 100%; max-width: 600px; margin: 15px auto; display: block; border: 1px solid #ddd; border-radius: 4px;">
     </div>
 
     <div class="project">
-        <div class="project-title">Aeolos Autonomous Delivery Drone System</div>
-        <div class="project-period">Feb 2019 – June 2021 | Independent Development</div>
+        <div class="project-title">WARR Rocketry - High-Pressure Valve Development</div>
+        <div class="project-period">May 2022 – July 2023 | Technical University of Munich</div>
         
-        <strong>Overview:</strong> Engineered a fully autonomous delivery drone with custom winch-based payload deployment system, from concept to working prototype.
+        <strong>Overview:</strong> Led design and development of main valve system for bi-propellant rocket engine as part of 15-person student rocketry team. Worked on novel sleeve-valve design for high-pressure cryogenic applications.
         
         <p><strong>Technical Challenges:</strong></p>
         <ul>
-            <li>Developing stable flight control algorithms for varying payload weights</li>
-            <li>Designing precise winch mechanism for safe payload deployment</li>
-            <li>Integrating GPS navigation with obstacle avoidance systems</li>
+            <li>Designing normally-closed system for fail-safe operation during power loss</li>
+            <li>Achieving reliable sealing at pressures up to 65 bar in cryogenic conditions</li>
+            <li>Optimizing spring mechanisms for rapid valve actuation under extreme conditions</li>
+            <li>Managing tight tolerances for dynamic high-pressure seals in specialized materials</li>
         </ul>
         
-        <p><strong>Achievements:</strong></p>
+        <p><strong>Key Learning:</strong></p>
         <ul>
-            <li>Built working prototype using self-designed CNC machined components</li>
-            <li>Successful autonomous flights with precise delivery capabilities</li>
-            <li>Won 2nd place in Entrepreneurs of Tomorrow Business Plan Competition (2021)</li>
+            <li>Deep experience with high-pressure fluid systems and cryogenic engineering</li>
+            <li>Collaborative engineering in complex, multi-subsystem projects</li>
+            <li>Critical importance of tolerance analysis and seal selection in extreme environments</li>
+            <li>Iteration and testing constraints with expensive specialized components</li>
         </ul>
+        
+        <img src="warr_valve_prototype.jpg" alt="Machined sleeve valve prototype developed for WARR rocket engine" style="width: 100%; max-width: 500px; margin: 15px auto; display: block; border: 1px solid #ddd; border-radius: 4px;">
     </div>
 
     <h2>Research Interests</h2>
     <ul>
-        <li><strong>RL in Robotics:</strong> Developing learning algorithms for autonomous robotic decision-making</li>
-        <li><strong>Manufacturing Automation:</strong> AI-driven optimization of industrial processes and quality control</li>
-        <li><strong>Perception & Navigation:</strong> Computer vision and sensor fusion for autonomous systems</li>
-        <li><strong>AI-driven Systems:</strong> Integration of machine learning with mechanical systems</li>
+        <li><strong>Reinforcement Learning in Robotics:</strong> Developing learning algorithms that enable robots to adapt and optimize their behavior in complex, dynamic environments</li>
+        <li><strong>Manufacturing Automation:</strong> AI-driven optimization of industrial processes, focusing on the intersection of machine learning and traditional manufacturing systems</li>
+        <li><strong>Autonomous Navigation:</strong> Control systems and sensor integration for reliable autonomous operation in unstructured environments</li>
+        <li><strong>Human-Robot Collaboration:</strong> Developing safe, intuitive robotic systems that can work effectively alongside human operators</li>
     </ul>
 
     <h2>Education</h2>
     <div class="education-item">
         <div class="school">Boston University</div>
         <div class="degree">Master of Science in Robotics & Autonomous Systems</div>
-        <div class="details">Expected May 2026 • Boston, MA</div>
+        <div class="details">Expected May 2026 • Boston, USA</div>
         <div class="details">Relevant Coursework: Deep Learning, Intro to Embedded Systems, Dynamics Modeling of Complex Mechanical Systems</div>
     </div>
 
     <div class="education-item">
         <div class="school">Technical University of Munich (TUM)</div>
         <div class="degree">Bachelor of Science in Mechanical Engineering</div>
-        <div class="details">May 2025 • Munich, Germany • Grade: 1.0/1.0 (4.0/4.0 US equivalent)</div>
-        <div class="details">Bachelor's Thesis: Grade 1.0/1.0</div>
+        <div class="details">May 2025 • Munich, Germany</div>
+        <div class="details">Bachelor's Thesis: Grade 1.0/1.0 (4.0/4.0 US equivalent)</div>
         <div class="details">Relevant Coursework: Automatic Control, Ethical Robot Systems, Engineering Mechanics, Machine Elements, Additive Manufacturing</div>
     </div>
 
     <div class="contact">
         <h2>Contact</h2>
         <a href="mailto:cgruss@bu.edu">cgruss@bu.edu</a>
-        <a href="https://github.com/cornelius-gruss" target="_blank">GitHub</a>
         <a href="https://linkedin.com/in/cornelius-gruss" target="_blank">LinkedIn</a>
+        <a href="https://github.com/corneliusgruss" target="_blank">GitHub</a>
     </div>
 </body>
 </html>
